@@ -40,7 +40,7 @@ public class Ocena {
 	@JsonView(Views.Private.class)
 	@Min(value = 1, message = "Ocena mora biti izmedju 1 i 5!")
 	@Max(value = 5, message = "Ocena mora biti izmedju 1 i 5!")
-	@NotNull(message = "Ocena mora biti izmedju {min} i {max}.")
+//	@NotNull(message = "Ocena mora biti izmedju {min} i {max}.")
 	@Column(nullable = false)
 	private Integer brojcanaOcena;
 	

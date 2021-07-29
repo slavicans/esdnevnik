@@ -38,7 +38,7 @@ public class Odeljenje {
 	protected Integer odeljenje_id;
 
 	@JsonView(Views.Private.class)
-	@NotNull(message = "Razred mora da se popuni.")
+//	@NotNull(message = "Razred mora da se popuni.")
 //	@Column(nullable = false)
 	@Min(value = 1, message = "Razred mora biti izmedju 1 i 8!")
 	@Max(value = 8, message = "Razred mora biti izmedju 1 i 8!")
@@ -51,7 +51,7 @@ public class Odeljenje {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "odeljenje", cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
-	@JsonBackReference
+//	@JsonBackReference
 	private List<Ucenik> ucenici;
 
 	@JsonIgnore
@@ -63,7 +63,7 @@ public class Odeljenje {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "odeljenje")
-	@JsonBackReference
+//	@JsonBackReference
 	private List<PredmetNastavnikOdeljenje> raspodelaPNO;
 
 	public Odeljenje() {

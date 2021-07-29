@@ -33,12 +33,12 @@ public class Predmet {
 	protected Integer predmet_id;
 
 	@JsonView(Views.Private.class)
-	@NotNull (message = "Podatak o nazivu predmeta mora da se popuni.")
+//	@NotNull (message = "Podatak o nazivu predmeta mora da se popuni.")
 	@Column(nullable = false)
 	private String nazivPredmeta;
 
 	@JsonView(Views.Private.class)
-	@NotNull(message = "Podatak o fondu casova mora da se popuni.")
+//	@NotNull(message = "Podatak o fondu casova mora da se popuni.")
 	@Column(nullable = false)
 	private Integer razred;
 

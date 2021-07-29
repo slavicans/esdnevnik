@@ -34,26 +34,28 @@ public class Korisnik {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonView(Views.Public.class)
+//	@JsonView(Views.Public.class)
 	protected Integer korisnik_id;
 	
-	@JsonView(Views.Private.class)
-	@NotBlank(message = "Ime korisnika mora da se popuni.")
+//	@JsonView(Views.Private.class)
+//	@NotBlank(message = "Ime korisnika mora da se popuni.")
 	@Column(nullable = false)
 	protected String ime;
 	
-	@JsonView(Views.Private.class)
-	@NotBlank(message = "Prezime korisnika mora da se popuni.")
+//	@JsonView(Views.Private.class)
+//	@NotBlank(message = "Prezime korisnika mora da se popuni.")
 	@Column(nullable = false)
 	protected String prezime;
 	
-	@JsonView(Views.Admin.class)
+//	@JsonView(Views.Admin.class)
+	@JsonIgnore
 	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
 	@JoinColumn(name = "role")
 	protected RoleEntity role;
 	
-	@JsonView(Views.Admin.class)
-	@NotBlank(message = " Email ora biti unesen!")
+	//@JsonView(Views.Admin.class)
+//	@NotBlank(message = " Email ora biti unesen!")
+	
 	@Email(message = "Email nije vazeci.")
 	@Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
 	message="Email  nije vazeci.")
@@ -61,11 +63,11 @@ public class Korisnik {
 	private String email;
 	
 	
-	@JsonIgnore
-	@NotBlank(message = " Lozinka mora biti unesena! ")
+	
+//	@NotBlank(message = " Lozinka mora biti unesena! ")
 	@Size (min = 8, max = 500, message = "Duzina lozinke mora biti izmedju {min} i {max}.")
 //	@Pattern(regexp = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}")
-	@Column (nullable=false)
+//	@Column (nullable=false)
 	private String password;
 	
 	@Version

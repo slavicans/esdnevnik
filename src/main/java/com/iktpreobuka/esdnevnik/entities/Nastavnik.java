@@ -55,13 +55,24 @@ public class Nastavnik extends Korisnik {
 	@JsonIgnore
 	@OneToMany(mappedBy = "nastavnik")
 //	@JsonBackReference
-	@JsonView(Views.Private.class)
+//	@JsonView(Views.Private.class)
 	List <PredmetNastavnik> raspodela;
 
 	public Nastavnik() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -75,6 +86,17 @@ public class Nastavnik extends Korisnik {
 		super(korisnik_id, ime, prezime, role, email, password, version);
 		// TODO Auto-generated constructor stub
 	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
